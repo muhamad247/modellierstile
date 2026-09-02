@@ -1,0 +1,4 @@
+cluster,sitzungen,aktionen_pro_min,anteil_verstehen,median_pause_s,blockgroesse,loeschquote,anteil_layout,layout_am_ende,dauer_min,fehler_mittel
+Zügig und linear,43,8.243,0.445,27.022,6.625,0.041,0.274,0.68,8.118,0.628
+Ausprobieren und umbauen,38,5.956,0.598,30.806,2.977,0.198,0.359,0.069,17.611,1.763
+"Erst denken, dann modellieren",39,4.629,0.616,70.778,7.6,0.024,0.185,0.5,12.706,0.308

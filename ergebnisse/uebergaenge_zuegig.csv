@@ -1,0 +1,37 @@
+von,nach,n,anteil
+Kante anlegen,Kante anlegen,435,0.427
+Kante anlegen,Knoten anlegen,298,0.292
+Kante anlegen,Nachdenken,131,0.129
+Kante anlegen,Verschieben,89,0.087
+Kante anlegen,Umbenennen,34,0.033
+Kante anlegen,Löschen,32,0.031
+Knoten anlegen,Knoten anlegen,379,0.399
+Knoten anlegen,Kante anlegen,333,0.351
+Knoten anlegen,Nachdenken,121,0.127
+Knoten anlegen,Verschieben,67,0.071
+Knoten anlegen,Umbenennen,31,0.033
+Knoten anlegen,Löschen,19,0.02
+Löschen,Knoten anlegen,38,0.528
+Löschen,Kante anlegen,24,0.333
+Löschen,Umbenennen,6,0.083
+Löschen,Löschen,2,0.028
+Löschen,Verschieben,2,0.028
+Nachdenken,Knoten anlegen,145,0.488
+Nachdenken,Kante anlegen,121,0.407
+Nachdenken,Verschieben,11,0.037
+Nachdenken,Löschen,10,0.034
+Nachdenken,Umbenennen,10,0.034
+Start,Nachdenken,43,1.0
+Umbenennen,Verschieben,68,0.405
+Umbenennen,Kante anlegen,45,0.268
+Umbenennen,Knoten anlegen,32,0.19
+Umbenennen,Umbenennen,14,0.083
+Umbenennen,Ende,6,0.036
+Umbenennen,Löschen,3,0.018
+Verschieben,Verschieben,367,0.608
+Verschieben,Umbenennen,73,0.121
+Verschieben,Kante anlegen,61,0.101
+Verschieben,Knoten anlegen,58,0.096
+Verschieben,Ende,37,0.061
+Verschieben,Löschen,6,0.01
+Verschieben,Nachdenken,2,0.003
