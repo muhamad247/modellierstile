@@ -16,8 +16,12 @@ LOG_MERKMALE = ["median_pause_s", "blockgroesse", "loeschquote"]
 
 def matrix(m: pd.DataFrame) -> np.ndarray:
     x = m[MERKMALE].copy()
+    if not np.isfinite(x.to_numpy(dtype=float)).all():
+        raise ValueError("Cluster-Merkmale müssen endlich und vollständig sein")
     for spalte in LOG_MERKMALE:
         x[spalte] = np.log1p(x[spalte])
+    if not np.isfinite(x.to_numpy(dtype=float)).all():
+        raise ValueError("Logarithmierte Cluster-Merkmale müssen endlich sein")
     return StandardScaler().fit_transform(x)
 
 

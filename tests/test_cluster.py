@@ -1,3 +1,5 @@
+import numpy as np
+import pytest
 import pandas as pd
 from sklearn.metrics import adjusted_rand_score
 
@@ -42,3 +44,17 @@ def test_matrix_ist_standardisiert(kennzahlen):
     x = cluster.matrix(kennzahlen)
     assert abs(x.mean(axis=0)).max() < 1e-9
     assert abs(x.std(axis=0) - 1).max() < 1e-9
+
+
+def test_matrix_lehnt_fehlende_werte_ab(kennzahlen):
+    unvollstaendig = kennzahlen.copy()
+    unvollstaendig.loc[unvollstaendig.index[0], "median_pause_s"] = np.nan
+    with pytest.raises(ValueError, match="endlich und vollständig"):
+        cluster.matrix(unvollstaendig)
+
+
+def test_matrix_lehnt_unendliche_werte_ab(kennzahlen):
+    ungueltig = kennzahlen.copy()
+    ungueltig.loc[ungueltig.index[0], "blockgroesse"] = np.inf
+    with pytest.raises(ValueError, match="endlich und vollständig"):
+        cluster.matrix(ungueltig)
