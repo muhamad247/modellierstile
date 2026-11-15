@@ -58,9 +58,10 @@ def main() -> None:
     print(profil.round(2).T.to_string())
 
     gruppen = [wahr.loc[m["cluster"] == n, "fehler"] for n in reihenfolge]
+    kruskal_ergebnis = kruskal(*gruppen)
     print(
-        f"Kruskal-Wallis Fehler je Cluster: H = {kruskal(*gruppen).statistic:.1f}, "
-        f"p = {kruskal(*gruppen).pvalue:.1e}"
+        f"Kruskal-Wallis Fehler je Cluster: H = {kruskal_ergebnis.statistic:.1f}, "
+        f"p = {kruskal_ergebnis.pvalue:.1e}"
     )
     m.round(4).to_csv(ERGEBNISSE / "merkmale.csv")
 
