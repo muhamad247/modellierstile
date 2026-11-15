@@ -36,6 +36,7 @@ def main() -> None:
     print("Silhouette je Clusterzahl:", sil.round(3).to_dict())
 
     labels = cluster.kmeans(x, K)
+    ward_labels = cluster.ward(x, K)
     namen = cluster.benennen(cluster.profile(m, labels))
     m["cluster"] = [namen[c] for c in labels]
     reihenfolge = [namen[c] for c in sorted(namen)]
@@ -44,9 +45,9 @@ def main() -> None:
     wahr = sitzungen.set_index("sitzung").loc[m.index]
     print(f"ARI k-Means gegen wahre Stile: {adjusted_rand_score(wahr['stil'], labels):.3f}")
     print(
-        f"ARI Ward gegen wahre Stile:    {adjusted_rand_score(wahr['stil'], cluster.ward(x, K)):.3f}"
+        f"ARI Ward gegen wahre Stile:    {adjusted_rand_score(wahr['stil'], ward_labels):.3f}"
     )
-    print(f"ARI k-Means gegen Ward:        {adjusted_rand_score(labels, cluster.ward(x, K)):.3f}")
+    print(f"ARI k-Means gegen Ward:        {adjusted_rand_score(labels, ward_labels):.3f}")
     print(f"Stabilität (80-%-Stichproben): {cluster.stabilitaet(x, K):.3f}")
     print(pd.crosstab(wahr["stil"], m["cluster"]).to_string())
 
